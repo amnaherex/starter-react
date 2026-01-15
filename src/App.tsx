@@ -1,14 +1,9 @@
-import Moviecard from "./components/moviecard"
+import Homepage from "./pages/Homepage"
+
 const App = () => {
   return (
-    <div className="h-screen flex w-screen">
-     
-      <Moviecard movie={ {
-        url:"logo.png" , 
-        alt:"Stranger Things", 
-        title:"Stranger Things",
-         date: 2020
-      }} />
+    <div className="h-screen flex justify-center items-center ">
+     <Homepage/>
     </div>
   )
 }

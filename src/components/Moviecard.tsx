@@ -2,11 +2,11 @@
 const Moviecard = ({movie}) => {
 
     function fav(){
-alert("movie added to fav")
+alert(movie.title + " added to fav")
     }
 
   return (
-    <div id="movie-card" className="flex justify-center items-center bg-orange-100 flex-col ">
+    <div id="movie-card" className="flex justify-center items-center bg-orange-100 flex-col  p-10 ">
       <div id="movie-poster">
         <img src={movie.url} alt={movie.title} />
       </div>
