@@ -1,4 +1,4 @@
-import Moviecard from "~/components/moviecard"
+import Moviecard from "~/components/Moviecard"
 import { useState } from "react"
 const Homepage = () => {
     const movies =[
