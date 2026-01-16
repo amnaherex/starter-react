@@ -15,20 +15,19 @@ const Homepage = () => {
 
   return (
     
-    <div id="home" className="flex flex-col  gap-20 items-center">
-        <form className=" h-8 p-1 w-80 flex flex-col items-center " id="searchform" onSubmit={handlesubmit} >
-            <label>Search</label>
+    <div id="home" className="md:p-10 p-5 flex flex-col h-screen bg-neutral-800 w-full items-center md:gap-10">
+        <form className=" flex gap-5 " id="searchform" onSubmit={handlesubmit} >
             <input 
             onChange={e => setsearch(e.target.value)}
             value = {search}    
-            className="bg-blue-100 w-full"
+            className="bg-white rounded-sm p-2 w-100 "
             type="text" 
             placeholder="Search for Movies... " /> 
 
             <button  
             onClick={handlesubmit}
             type="submit" 
-            className="bg-orange-500 p=5 rounded-lg w-[100px]">
+            className="text-white font-bold bg-red-500 rounded-sm  p-2 w-20 ">
                 Submit</button>
         </form>
 

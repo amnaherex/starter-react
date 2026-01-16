@@ -6,12 +6,15 @@ alert(movie.title + " added to fav")
     }
 
   return (
-    <div id="movie-card" className="flex justify-center items-center bg-orange-100 flex-col  p-10 ">
-      <div id="movie-poster">
+    <div id="movie-card" className="flex h-90 w-70  justify-center items-center bg-neutral-400 rounded-md flex-col  p-10 ">
+      <div className="bg-red-100" id="movie-poster">
         <img src={movie.url} alt={movie.title} />
       </div>
 
-      <div id="overlay">
+      <div
+      className="
+                  relative md:bottom-[60px] md:left-[55px]  bg-neutral-300 rounded-[100px] p-1      "
+      id="overlay">
         <button onClick={fav} id="fav">❤</button>
       </div>
 
