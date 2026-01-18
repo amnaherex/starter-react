@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "paths": {
-      "~/*": ["./src/*"]
-    }
-  },
+    "skipLibCheck": true,
+    "noImplicitAny": false
+  
+},
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

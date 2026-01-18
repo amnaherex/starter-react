@@ -2,7 +2,6 @@ import tailwindAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     container: {
@@ -83,7 +82,9 @@ const config: Config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    
   },
+  
   plugins: [tailwindAnimate],
 };
 

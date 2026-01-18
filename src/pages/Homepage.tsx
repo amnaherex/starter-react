@@ -1,17 +1,33 @@
 import Moviecard from "~/components/Moviecard"
-import { useState } from "react"
+import { useState , useEffect} from "react";
+import {getmovie,search } from "../services/api";
 const Homepage = () => {
-    const movies =[
-        {id:1, alt:"movie1", title:"movie 1", date: 2020 },
-        {id:2, alt:"movie2", title:"movie 2", date: 2021 },
-        {id:3, alt:"movie3", title:"movie 3", date: 2022 }
-    ]
-
-    const [search, setsearch] = useState("");
+    const [movies , setmovies] = useState([]);
+    const [loading , setloading] = useState(true);
+    const [error , seterror] = useState("");
+    const [searchQuery, setsearch] = useState("");
 
     function handlesubmit(){
         alert(search)
     }
+
+    
+
+    useEffect( ()=> {
+      async function call( ){
+      try {
+        const data = await getmovie();
+        setmovies(data);
+      } catch (error) {
+        console.log("theres some error");
+        seterror("there is an error");
+      }
+      finally{
+        setloading(false);
+      }
+    }
+    call();
+    } , [])
 
   return (
     
@@ -31,12 +47,13 @@ const Homepage = () => {
                 Submit</button>
         </form>
 
-      <div id="movies-grid" className="gap-5 flex"> 
-            {movies.map(moviee => moviee.title.toLowerCase().startsWith(search) && <Moviecard movie={moviee} key={moviee.id} />
-
-            )}
+      <div className="movies-grid">
+          {movies.map((movie) => (
+            <Moviecard movie={movie} key={movie.id} />
+          ))}
+        </div>
       </div>
-    </div>
+
   )
 }
 
